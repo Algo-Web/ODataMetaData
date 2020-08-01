@@ -25,16 +25,18 @@
   ],
   "require": {
     "php": "^7.1",
-    "doctrine/inflector": ">=1.1",
-    "jms/serializer": "^3.0|^2.0|^1.7"
+    "myclabs/php-enum": "dev-master",
+    "ext-xmlwriter": "*",
+    "ext-xmlreader": "*"
   },
   "require-dev": {
-    "phpspec/phpspec": "^3.0",
-    "squizlabs/php_codesniffer": "~2.3",
-    "mockery/mockery": "0.9.*|^1.0@dev",
-    "phpunit/phpunit": "^7.0",
+    "mockery/mockery": "^1.2|dev-master",
     "php-coveralls/php-coveralls": ">=v2.1",
-    "pcov/clobber": "dev-master"
+    "phpspec/phpspec": "^3.0",
+    "phpstan/phpstan": "^0.12",
+    "phpunit/phpunit": "^7.0",
+    "squizlabs/php_codesniffer": "~2.3",
+    "symfony/var-dumper": ">=4.0.0"
   },
   "scripts": {
     "test": "phpunit",
@@ -44,12 +46,13 @@
     "psr-4": {
       "AlgoWeb\\ODataMetadata\\": "src/"
     },
+    "files": ["src/polyfill.php"]
+
+  },
+  "autoload-dev": {
     "classmap": [
       "tests/"
     ]
-  },
-  "autoload-dev": {
-
   },
   "config": {
     "sort-packages": true
